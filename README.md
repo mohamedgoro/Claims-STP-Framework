@@ -9,3 +9,10 @@ This is a project that shows how to process insurance claims without any humans 
 1. The customer sends the claim details.
 2. Our "Logic Robot" checks the rules.
 3. If everything is perfect, the claim is paid instantly!
+
+graph TD
+    A[Customer Sends Claim] --> B{Is Policy Active?}
+    B -- No --> C[Reject]
+    B -- Yes --> D{Cost < $500?}
+    D -- No --> E[Send to Human]
+    D -- Yes --> F[Pay Instantly!]
